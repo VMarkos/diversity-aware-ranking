@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="wenet_stylesheet.css" media="screen"/>
+        <script type="text/javascript" src="colourPicker.js"></script>
+        <script type="text/javascript" src="utils.js"></script>
         <title>Diversity-aware Ranking</title>
     </head>
-    <body>
+    <body onload="onLoad()">
         <div class="body-container">
             <div class="header-container">
                 <div class="logo-container">
@@ -14,15 +16,37 @@
             </div>
             <div class="main-container">
                 <div class="color-picker-container">
-                    <div class="color-picker-label">
-                        Pick a color:
+                    <div class="color-picker-header-container">
+                        <div class="color-picker-label">
+                            Pick a color:
+                        </div>
                     </div>
-                    <div class="active-color"></div>
+                    <div class="color-canvas-container">
+                        <div class="color-line-container">
+                            <canvas id="color-line" class="line-canvas"></canvas>
+                        </div>
+                        <div class="color-rgba-container">
+                            <div class="color-panel-container">
+                                <canvas id="color-panel" class="panel-canvas"></canvas>
+                            </div>
+                            <div class="active-color-container">
+                                <div class="user-head-sizebox">
+                                    <div class="user-head-container">
+                                        <div class="user-head"></div>
+                                    </div>
+                                </div>
+                                <div class="user-body"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="diversity-container">
                     <div class="diversity-slider-label">Diversity level:</div>
                     <div class="diversity-slider-container">
-                        <input type="range" min="0" max="100" value="0" class="slider" id="diversity-slider">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="diversity-slider" onchange="diversityCoefficient()">
+                    </div>
+                    <div class="diversity-percentage-container">
+                        <div id="diversity-coefficient" class="diversity-percentage">0%</div>
                     </div>
                 </div>
                 <div class="sample-container">
