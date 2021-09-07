@@ -1,6 +1,6 @@
 function onLoad() {
     initColourPickerLine();
-    initColourPanel();
+    initColourPanel("255,0,0");
 }
 
 function diversityCoefficient() {
