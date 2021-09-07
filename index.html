@@ -14,49 +14,67 @@
                     <a href="index.html"><img src="images/logo.png" alt="WeNet Logo"/></a>
                 </div>
             </div>
-            <div class="main-container">
-                <div class="color-picker-container">
-                    <div class="color-picker-header-container">
-                        <div class="color-picker-label">
-                            Pick a color:
-                        </div>
-                    </div>
-                    <div class="color-canvas-container">
-                        <div class="color-line-container">
-                            <canvas id="color-line" class="line-canvas"></canvas>
-                        </div>
-                        <div class="color-rgba-container">
-                            <div class="color-panel-container">
-                                <canvas id="color-panel" class="panel-canvas"></canvas>
+            <div class="main-body-container">
+                <div class="main-container">
+                    <div class="color-picker-container">
+                        <div class="color-picker-header-container">
+                            <div class="color-picker-label">
+                                Pick a color:
                             </div>
-                            <div class="active-color-container">
-                                <div class="user-head-sizebox">
-                                    <div class="user-head-container">
-                                        <div class="user-head"></div>
+                        </div>
+                        <div class="color-canvas-container">
+                            <div id="color-line-container" class="color-line-container">
+                                <div id="line-canvas-container" class="line-canvas-container">
+                                    <canvas id="color-line" class="line-canvas"></canvas>
+                                </div>
+                                <div id="line-picker-box" class="line-picker-container">
+                                    <div id="color-line-picker" class="line-picker"></div>
+                                </div>
+                            </div>
+                            <div class="color-rgba-container">
+                                <div id="color-panel-container" class="color-rgba-canvas-container">
+                                    <div class="color-panel-padding-container">
+                                        <div class="color-panel-container">
+                                            <div class="panel-canvas-container">
+                                                <canvas id="color-panel" class="panel-canvas"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-picker-container">
+                                        <div id="color-panel-picker" class="panel-picker"></div>
                                     </div>
                                 </div>
-                                <div class="user-body"></div>
+                                <div class="active-color-container">
+                                    <div class="user-head-sizebox">
+                                        <div class="user-head-container">
+                                            <div id="user-head" class="user-head"></div>
+                                        </div>
+                                    </div>
+                                    <div id="user-body" class="user-body"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="diversity-container">
-                    <div class="diversity-slider-label">Diversity level:</div>
-                    <div class="diversity-slider-container">
-                        <input type="range" min="0" max="100" value="0" class="slider" id="diversity-slider" onchange="diversityCoefficient()">
+                    <div class="diversity-container">
+                        <div class="diversity-slider-label">Diversity level:</div>
+                        <div class="diversity-slider-container">
+                            <input type="range" min="0" max="100" value="0" class="slider" id="diversity-slider" onchange="diversityCoefficient()">
+                        </div>
+                        <div class="diversity-percentage-container">
+                            <div id="diversity-coefficient" class="diversity-percentage">0%</div>
+                        </div>
                     </div>
-                    <div class="diversity-percentage-container">
-                        <div id="diversity-coefficient" class="diversity-percentage">0%</div>
-                    </div>
-                </div>
-                <div class="sample-container">
-                    <div class="sample-box">
-                        <div class="sample-content">
-                            
+                    <div class="sample-container">
+                        <div class="sample-box">
+                            <div class="sample-content">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="linePicker.js"></script>
+        <script type="text/javascript" src="panelPicker.js"></script>
     </body>
 </html>
