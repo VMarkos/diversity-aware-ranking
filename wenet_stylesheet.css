@@ -117,6 +117,7 @@ img {
     position: absolute;
     border-radius: 50%;
     box-shadow: 1px 2px 2px rgba(0, 0, 20, 255);
+    transition-duration: 1s;
 }
 
 .color-picker-container {
