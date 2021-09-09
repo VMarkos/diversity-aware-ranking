@@ -3,7 +3,24 @@ let rankedPoints = [];
 function rank() { // This is the function called on click.
     rankedPoints = [];
     rankByDistance();
-    console.log(rankedPoints);
+    const sampleBox = document.getElementById("sample-content-box");
+    const boxWidth = sampleBox.getBoundingClientRect().width;
+    const boxHeight = sampleBox.getBoundingClientRect().height;
+    const pointSep = 5;
+    const xStep = 100 / Math.ceil((boxWidth - pointSep) / (pointSize + pointSep));
+    const yStep = 100 / Math.ceil((boxHeight - pointSep) / (pointSize + pointSep))
+    let xOffset = 0;
+    let yOffset = 0;
+    for (const point of rankedPoints) {
+        const pointElement = document.getElementById("point-" + point["id"]);
+        pointElement.style.left = xOffset + "%";
+        pointElement.style.top = yOffset + "%";
+        xOffset += xStep;
+        if (xOffset > 100) {
+            xOffset = 0;
+            yOffset += yStep;
+        }
+    }
 }
 
 function rankByDistance() {
