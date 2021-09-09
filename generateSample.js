@@ -1,13 +1,14 @@
 let pointColors = [];
 
+const pointSize = 25; // Measured in px
+const pointMargin = 20; // Measured in px
+
 function plotPoints() {
     pointColors = [];
     const sampleBox = document.getElementById("sample-content-box");
     sampleBox.innerHTML = "";
     const boxWidth = sampleBox.getBoundingClientRect().width;
     const boxHeight = sampleBox.getBoundingClientRect().height;
-    const pointSize = 25; // Measured in px
-    const pointMargin = 20; // Measured in px
     const points = generatePointsInBox(boxWidth, boxHeight, pointSize, pointMargin);
     for (let id=0; id<points.length; id++) {
         const point = points[id];
