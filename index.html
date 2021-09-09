@@ -13,6 +13,10 @@
                 <div class="logo-container">
                     <a href="index.html"><img src="images/logo.png" alt="WeNet Logo"/></a>
                 </div>
+                <div class="header-buttons-container">
+                    <div class="header-button generate" onclick="plotPoints()">Generate</div>
+                    <div class="header-button rank" onclick="rank()">Rank</div>
+                </div>
             </div>
             <div class="main-body-container">
                 <div class="main-container">
@@ -66,9 +70,7 @@
                     </div>
                     <div class="sample-container">
                         <div class="sample-box">
-                            <div class="sample-content">
-                                
-                            </div>
+                            <div id="sample-content-box" class="sample-content"></div>
                         </div>
                     </div>
                 </div>
@@ -77,4 +79,6 @@
     </body>
     <script type="text/javascript" src="linePicker.js"></script>
     <script type="text/javascript" src="panelPicker.js"></script>
+    <script type="text/javascript" src="generateSample.js"></script>
+    <script type="text/javascript" src="rank.js"></script>
 </html>
