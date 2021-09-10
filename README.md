@@ -1,2 +1,2 @@
-# diversity-aware-ranking
-A small demonstration of a generic diversity aware ranking methodology.
+# Diversity-aware Ranking
+A small demonstration of an abstract framework which allows for diversity aware ranking. In this applications, you are asked to pick a target colour and then generate a random sample of coloured points. Then, you can rank them according to their colour-distance from your target colour by taking into account diversity as well. You may choose to ignore entirely diversity - i.e. 0% of diversity awareness - or let it account for some part of your ranking - say 20% or 60%. Also, you can ask for a fully diversity-driven ranking, by setting it to 100%. The application is available at https://vmarkos.github.io/diversity-aware-ranking/.
