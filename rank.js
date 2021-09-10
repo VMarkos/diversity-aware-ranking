@@ -3,6 +3,9 @@ let rankedPoints = [];
 function rank() { // This is the function called on click.
     rankedPoints = [];
     rankByDistance();
+    diversityRank();
+    rankedPoints = mixRankings();
+    console.log(rankedPoints);
     const sampleBox = document.getElementById("sample-content-box");
     const boxWidth = sampleBox.getBoundingClientRect().width;
     const boxHeight = sampleBox.getBoundingClientRect().height;
@@ -21,6 +24,34 @@ function rank() { // This is the function called on click.
             yOffset += yStep;
         }
     }
+}
+
+function mixRankings() {
+    const totalScores = [];
+    for (let i=0; i<maxPoints; i++) {
+        totalScores.push({
+            id: i,
+            score: mixRankingScores(i),
+        })
+    }
+    return totalScores.sort((a, b) => {
+        return b["score"] - a["score"];
+    });
+}
+
+function mixRankingScores(id) {
+    const diversityCoefficient = document.getElementById("diversity-slider").value / 100;
+    let crispScore = 0.0;
+    let diverseScore = 0.0;
+    for (let i=0; i<maxPoints; i++) {
+        if (rankedPoints[i]["id"] === id) {
+            crispScore = 1.0 - rankedPoints[i]["distance"];
+        }
+        if (diversityRanking[i]["id"] === id) {
+            diverseScore = diversityRanking[i]["diversity"];
+        }
+    }
+    return diversityCoefficient * diverseScore + (1.0 - diversityCoefficient) * crispScore;
 }
 
 function rankByDistance() {
