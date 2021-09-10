@@ -2,6 +2,7 @@ let pointColors = [];
 
 const pointSize = 25; // Measured in px
 const pointMargin = 20; // Measured in px
+let maxPoints = 30;
 
 function plotPoints() {
     pointColors = [];
@@ -27,7 +28,6 @@ function plotPoints() {
 }
 
 function generatePointsInBox(boxWidth, boxHeight, pointSize, pointMargin) {
-    let maxPoints = 30;
     if ((maxPoints * (pointSize + pointMargin) ^ 2) > ((boxHeight - pointMargin) * (boxWidth - pointMargin))) {
         maxPoints = Math.floor((boxWidth - pointMargin) * (boxHeight - pointMargin) / ((pointSize + pointMargin) ^ 2));
     }
