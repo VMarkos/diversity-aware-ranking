@@ -13,72 +13,137 @@
                 <div class="logo-container">
                     <a href="index.html"><img src="images/logo.png" alt="WeNet Logo"/></a>
                 </div>
+                <div id="tour-6" class="tour-container">
+                    <div class="header-button rank" onclick="startTour()">Tour!</div>
+                </div>
                 <div class="header-buttons-container">
-                    <div class="header-button generate" onclick="plotPoints()">Generate</div>
-                    <div class="header-button rank" onclick="rank()">Rank</div>
+                    <div id="tour-4" class="tour-container">
+                        <div class="header-button generate" onclick="plotPoints()">Generate</div>
+                    </div>
+                    <div id="tour-5" class="tour-container">
+                        <div class="header-button rank" onclick="rank()">Rank</div>
+                    </div>
                 </div>
             </div>
             <div class="main-body-container">
-                <div class="left-siderbar-container">
+                <div class="left-sidebar-container">
                     <div class="left-sidebar"> <!--TODO add a "take a tour" functionality -->
-                        <div class="help-container">
-                            <h2 class="help-h2">This is a heading</h2>
-                            <p class="help-par">This is some helpful text that stretches to more than one lines.</p>
+                        <div id="help-sidebar-1" class="help-container">
+                            <h2 class="help-h2">Pick a Color!</h2>
+                            <p class="help-par">Pick a color that will serve as the target color for your ranking - that is, the closer to the 
+                                selected color, the higher an item will rank, ignoring diversity.
+                            </p>
+                            <div class="next-container">
+                                <div class="text-link" onclick="tourStep(2)">Next >></div>
+                            </div>
+                        </div>
+                        <div id="help-sidebar-2" class="help-container">
+                            <h2 class="help-h2">How diverse?</h2>
+                            <p class="help-par">Drag the lever to determine the importance diversity should play in your ranking. The higher diversity is
+                                the easier for quite diverse entities to rise to the top.
+                            </p>
+                            <div class="next-container">
+                                <div class="text-link" onclick="tourStep(3)">Next >></div>
+                            </div>
+                        </div>
+                        <div id="help-sidebar-3" class="help-container">
+                            <h2 class="help-h2">An empty space?</h2>
+                            <p class="help-par">In this box you will see your sample - once generated - as well as the final ranking.
+                            </p>
+                            <div class="next-container">
+                                <div class="text-link" onclick="tourStep(4)">Next >></div>
+                            </div>
+                        </div>
+                        <div id="help-sidebar-6" class="help-container">
+                            <h2 class="help-h2">Tour</h2>
+                            <p class="help-par">In case you want to remind yourself of some part of the process, hit the "Tour" button again!
+                            </p>
+                            <div class="next-container">
+                                <div class="text-link" onclick="tourEnd()">End >></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="main-container">
-                    <div class="color-picker-container">
-                        <div class="color-picker-header-container">
-                            <div class="color-picker-label">
-                                Pick a color:
-                            </div>
-                        </div>
-                        <div class="color-canvas-container">
-                            <div id="color-line-container" class="color-line-container">
-                                <div id="line-canvas-container" class="line-canvas-container">
-                                    <canvas id="color-line" class="line-canvas"></canvas>
-                                </div>
-                                <div id="line-picker-box" class="line-picker-container">
-                                    <div id="color-line-picker" class="line-picker"></div>
+                    <div id="tour-1" class="tour-container">
+                        <div class="color-picker-container">
+                            <div class="color-picker-header-container">
+                                <div class="color-picker-label">
+                                    Pick a color:
                                 </div>
                             </div>
-                            <div class="color-rgba-container">
-                                <div id="color-panel-container" class="color-rgba-canvas-container">
-                                    <div class="color-panel-padding-container">
-                                        <div class="color-panel-container">
-                                            <div class="panel-canvas-container">
-                                                <canvas id="color-panel" class="panel-canvas"></canvas>
+                            <div class="color-canvas-container">
+                                <div id="color-line-container" class="color-line-container">
+                                    <div id="line-canvas-container" class="line-canvas-container">
+                                        <canvas id="color-line" class="line-canvas"></canvas>
+                                    </div>
+                                    <div id="line-picker-box" class="line-picker-container">
+                                        <div id="color-line-picker" class="line-picker"></div>
+                                    </div>
+                                </div>
+                                <div class="color-rgba-container">
+                                    <div id="color-panel-container" class="color-rgba-canvas-container">
+                                        <div class="color-panel-padding-container">
+                                            <div class="color-panel-container">
+                                                <div class="panel-canvas-container">
+                                                    <canvas id="color-panel" class="panel-canvas"></canvas>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="panel-picker-container">
-                                        <div id="color-panel-picker" class="panel-picker"></div>
-                                    </div>
-                                </div>
-                                <div class="active-color-container">
-                                    <div class="user-head-sizebox">
-                                        <div class="user-head-container">
-                                            <div id="user-head" class="user-head"></div>
+                                        <div class="panel-picker-container">
+                                            <div id="color-panel-picker" class="panel-picker"></div>
                                         </div>
                                     </div>
-                                    <div id="user-body" class="user-body"></div>
+                                    <div class="active-color-container">
+                                        <div class="user-head-sizebox">
+                                            <div class="user-head-container">
+                                                <div id="user-head" class="user-head"></div>
+                                            </div>
+                                        </div>
+                                        <div id="user-body" class="user-body"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="diversity-container">
-                        <div class="diversity-slider-label">Diversity level:</div>
-                        <div class="diversity-slider-container">
-                            <input type="range" min="0" max="100" value="0" class="slider" id="diversity-slider" onchange="diversityCoefficient()">
-                        </div>
-                        <div class="diversity-percentage-container">
-                            <div id="diversity-coefficient" class="diversity-percentage">0%</div>
+                    <div id="tour-2" class="tour-container">
+                        <div class="diversity-container">
+                            <div class="diversity-slider-label">Diversity level:</div>
+                            <div class="diversity-slider-container">
+                                <input type="range" min="0" max="100" value="0" class="slider" id="diversity-slider" onchange="diversityCoefficient()">
+                            </div>
+                            <div class="diversity-percentage-container">
+                                <div id="diversity-coefficient" class="diversity-percentage">0%</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="sample-container">
-                        <div class="sample-box">
-                            <div id="sample-content-box" class="sample-content"></div>
+                    <!-- TODO Fix the onWindowResize stuff here! -->
+                    <div id="tour-3" class="tour-container">
+                        <div class="sample-container">
+                            <div class="sample-box">
+                                <div id="sample-content-box" class="sample-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-sidebar-container">
+                    <div class="right-sidebar">
+                        <div id="help-sidebar-4" class="help-container">
+                            <h2 class="help-h2">Generate a sample!</h2>
+                            <p class="help-par">Push this button to generate a sample of 30 points with various colors, randomly chosen.
+                            </p>
+                            <div class="next-container">
+                                <div class="text-link" onclick="tourStep(5)">Next >></div>
+                            </div>
+                        </div>
+                        <div id="help-sidebar-5" class="help-container">
+                            <h2 class="help-h2">Rank!</h2>
+                            <p class="help-par">Rank the sample you have generated taking into account their proximity to your chosen color as well as
+                                the amount of diversity you have chosen.
+                            </p>
+                            <div class="next-container">
+                                <div class="text-link" onclick="tourStep(6)">Next >></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,4 +155,5 @@
     <script type="text/javascript" src="generateSample.js"></script>
     <script type="text/javascript" src="rank.js"></script>
     <script type="text/javascript" src="diversityAwareRanking.js"></script>
+    <script type="text/javascript" src="tour.js"></script>
 </html>
