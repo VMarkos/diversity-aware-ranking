@@ -19,7 +19,7 @@ function rank() { // This is the function called on click.
         pointElement.style.left = xOffset + "%";
         pointElement.style.top = yOffset + "%";
         xOffset += xStep;
-        if (xOffset > 100) {
+        if (xOffset > 95) {
             xOffset = 0;
             yOffset += yStep;
         }
