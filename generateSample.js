@@ -18,8 +18,8 @@ function plotPoints() {
         newPoint.id = "point-" + id;
         newPoint.style.height = pointSize + "px";
         newPoint.style.width = pointSize + "px";
-        newPoint.style.left = 100 * point["x"] / boxWidth + "%";
-        newPoint.style.top = 100 * point["y"] / boxHeight + "%";
+        newPoint.style.left = 100 * (point["x"]-15) / boxWidth + "%";
+        newPoint.style.top = 100 * (point["y"]-15) / boxHeight + "%";
         const color = [Math.floor(256*Math.random()), Math.floor(256*Math.random()), Math.floor(256*Math.random())];
         newPoint.style.backgroundColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + ",255)";
         sampleBox.appendChild(newPoint);
