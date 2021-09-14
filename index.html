@@ -8,7 +8,7 @@
         <title>Diversity-aware Ranking</title>
     </head>
     <body onload="onLoad()">
-        <div class="body-container">
+        <div id="body-container" class="body-container">
             <div class="header-container">
                 <div class="logo-container">
                     <a href="index.html"><img src="images/logo.png" alt="WeNet Logo"/></a>
@@ -117,7 +117,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- TODO Fix the onWindowResize stuff here! -->
                     <div id="tour-3" class="tour-container">
                         <div class="sample-container">
                             <div class="sample-box">
@@ -144,6 +143,20 @@
                             <div class="next-container">
                                 <div class="text-link" onclick="tourStep(6)">Next >></div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tour-popup" class="tour-popup-container">
+                <div class="tour-popup">
+                    <h2 class="tour-h2">Take a Tour!</h2>
+                    <p class="tour-par">Do you want to take a tour to get to know our diversity aware ranking app?</p>
+                    <div class="tour-buttons">
+                        <div class="tour-button-container" >
+                            <div class="popup-button confirm" onclick="startTour()">Okay</div>
+                        </div>
+                        <div class="tour-button-container" >
+                            <div class="popup-button skip" onclick="skipTour()">Skip</div>
                         </div>
                     </div>
                 </div>
