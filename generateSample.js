@@ -21,7 +21,7 @@ function plotPoints() {
         newPoint.style.left = 100 * (point["x"]-15) / boxWidth + "%";
         newPoint.style.top = 100 * (point["y"]-15) / boxHeight + "%";
         const color = [Math.floor(256*Math.random()), Math.floor(256*Math.random()), Math.floor(256*Math.random())];
-        newPoint.style.backgroundColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + ",255)";
+        newPoint.style.backgroundColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + ",1)";
         sampleBox.appendChild(newPoint);
         pointColors.push(color);
     }
@@ -33,10 +33,10 @@ function generatePointsInBox(boxWidth, boxHeight, pointSize, pointMargin) {
     }
     const points = []; // Array of points, where each point is a {x: x, y: y} object;
     for (let i=0; i<maxPoints; i++) {
-        let x = pointMargin + (boxWidth - pointSize - pointMargin) * Math.random();
+        let x = pointMargin / 2 + (boxWidth - pointSize - pointMargin) * Math.random();
         let y = pointMargin + (boxHeight - pointSize - pointMargin) * Math.random();
         while (!pointFitsBox(x, y, points, pointSize, pointMargin)) {
-            x = pointMargin + (boxWidth - pointSize - pointMargin) * Math.random();
+            x = pointMargin / 2 + (boxWidth - pointSize - pointMargin) * Math.random();
             y = pointMargin + (boxHeight - pointSize - pointMargin) * Math.random();
         }
         points.push({
