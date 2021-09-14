@@ -1,10 +1,13 @@
 html, body {
-    width: 100%;
-    height: 100%;
+    overflow-x: auto;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
     background-color: rgba(54, 63, 80, 1);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 img {
@@ -13,6 +16,7 @@ img {
 }
 
 .body-container {
+    position: relative;
     height: 100%;
     width: 100%;
     display: flex;
@@ -141,7 +145,6 @@ img {
     border-radius: 25px;
     border: 4px solid white;
     box-shadow: 3px 6px 6px rgba(0, 0, 20, 1);
-    /* margin: 10px; */
 }
 
 .sample-content {
@@ -354,4 +357,76 @@ img {
 
 .text-link:hover {
     opacity: 0.8;
+}
+
+.tour-popup-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    visibility: hidden;
+}
+
+.tour-popup {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tour-h2 {
+    color: rgba(54, 63, 80, 1);
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.tour-par {
+    color: rgba(54, 63, 80, 1);
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.tour-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.tour-button-container {
+    padding: 10px;
+}
+
+.popup-button {
+    cursor: pointer;
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 20, 255);
+}
+
+.popup-button:hover {
+    opacity: 0.8;
+}
+
+.popup-button:active {
+    transform: scale(0.9);
+}
+
+.popup-button.skip {
+    background-color: white;
+    color: rgba(0,163,182,255);
+}
+
+.popup-button.confirm {
+    background-color: rgba(0,163,182,255);
+    color: white;
 }
