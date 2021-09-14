@@ -5,7 +5,6 @@ function rank() { // This is the function called on click.
     rankByDistance();
     diversityRank();
     rankedPoints = mixRankings();
-    console.log(rankedPoints);
     const sampleBox = document.getElementById("sample-content-box");
     const boxWidth = sampleBox.getBoundingClientRect().width;
     const boxHeight = sampleBox.getBoundingClientRect().height;
@@ -19,7 +18,7 @@ function rank() { // This is the function called on click.
         pointElement.style.left = xOffset + "%";
         pointElement.style.top = yOffset + "%";
         xOffset += xStep;
-        if (xOffset > 95) {
+        if (xOffset > 99 - xStep) {
             xOffset = 0;
             yOffset += yStep;
         }
